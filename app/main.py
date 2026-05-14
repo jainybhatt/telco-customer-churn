@@ -1,4 +1,9 @@
 from fastapi import FastAPI
+import joblib
+
+# Load model at startup
+model = joblib.load('models/log_reg_model.pkl')
+
 
 app = FastAPI(
     title="Logistic Regression model API.",
@@ -8,4 +13,7 @@ app = FastAPI(
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+    return {
+        "status": "healthy",
+        "model_loaded": model is not None
+        }
