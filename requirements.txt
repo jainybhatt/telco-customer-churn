@@ -4,6 +4,9 @@ scikit-learn==1.6.1
 joblib==1.5.3
 pydantic==2.9.0
 pydantic-settings==2.5.0
-numpy==2.0.2
 pytest==8.3.0
 pylance==6.0.0
+imbalanced-learn==0.13.0
+pandas==2.2.3
+numpy==1.26.4
+requests==2.32.3
