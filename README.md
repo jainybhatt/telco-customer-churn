@@ -7,7 +7,7 @@ Focused customer retention programs
 
 ### Context
 
-"Predict behavior to retain customers. You can analyze all relevant customer data and develop focused customer retention programs." [IBM Sample Data Sets]
+Predict behavior to retain customers. You can analyze all relevant customer data and develop focused customer retention programs. [IBM Sample Data Sets]
 
 ### Content
 Each row represents a customer, each column contains customer’s attributes described on the column Metadata.
