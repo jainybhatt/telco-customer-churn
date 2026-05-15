@@ -71,7 +71,7 @@ The model pipeline includes:
 
 All steps are wrapped into a single sklearn/imblearn pipeline and saved as:
 
-```bash
+bash:
 models/log_reg_model.pkl
 
 --
@@ -108,53 +108,53 @@ Docker
         Open API Docs
     Swagger UI: http://127.0.0.1:8000/docs
     
-    ### API Endpoints
+##  API Endpoints
     
-    - Health Check
-        GET /
+- Health Check
+    GET /
 
-        Response:
+    Response:
 
-        {
-        "message": "Telco Churn API is running"
-        }
+    {
+    "message": "Telco Churn API is running"
+    }
     
     
-    - Prediction Endpoint
-        POST /predict
-        Example Request
-        {
-        "gender": "Male",
-        "SeniorCitizen": 0,
-        "Partner": "Yes",
-        "Dependents": "No",
-        "tenure": 12,
-        "PhoneService": "Yes",
-        "MultipleLines": "No",
-        "InternetService": "Fiber optic",
-        "OnlineSecurity": "No",
-        "OnlineBackup": "Yes",
-        "DeviceProtection": "No",
-        "TechSupport": "No",
-        "StreamingTV": "Yes",
-        "StreamingMovies": "No",
-        "Contract": "Month-to-month",
-        "PaperlessBilling": "Yes",
-        "PaymentMethod": "Electronic check",
-        "MonthlyCharges": 70.5,
-        "TotalCharges": 840.6
-        }
+- Prediction Endpoint
+    POST /predict
+    Example Request
+    {
+    "gender": "Male",
+    "SeniorCitizen": 0,
+    "Partner": "Yes",
+    "Dependents": "No",
+    "tenure": 12,
+    "PhoneService": "Yes",
+    "MultipleLines": "No",
+    "InternetService": "Fiber optic",
+    "OnlineSecurity": "No",
+    "OnlineBackup": "Yes",
+    "DeviceProtection": "No",
+    "TechSupport": "No",
+    "StreamingTV": "Yes",
+    "StreamingMovies": "No",
+    "Contract": "Month-to-month",
+    "PaperlessBilling": "Yes",
+    "PaymentMethod": "Electronic check",
+    "MonthlyCharges": 70.5,
+    "TotalCharges": 840.6
+    }
 
-        Example Response
-        {
-        "churn_prediction": "Yes",
-        "churn_probability": 0.59
-        }
+    Example Response
+    {
+    "churn_prediction": "Yes",
+    "churn_probability": 0.59
+    }
 
 
-Invalid input returns:
+    - Invalid input returns:
 
-422 Unprocessable Entity
+    422 Unprocessable Entity
 
 ## Run with Docker
     Build and start containers
@@ -176,7 +176,7 @@ pytest tests/
 
     numpy==1.26.4
     pandas==2.2.3
-    
+
 3. imblearn missing
     pip install imbalanced-learn
 
