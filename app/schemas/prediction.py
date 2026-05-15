@@ -24,7 +24,5 @@ class ChurnInput(BaseModel):
 
 class ChurnOutput(BaseModel):
       prediction: str
-      #prediction_label: str
       probability: float
-      #probabilities: dict[str, float]
       
