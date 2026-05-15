@@ -14,10 +14,13 @@ Each row represents a customer, each column contains customer’s attributes des
 
 ### The data set includes information about:
 
-Customers who left within the last month – the column is called Churn
-Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
-Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges
-Demographic info about customers – gender, age range, and if they have partners and dependents
+Customers who left within the last month – the column is called Churn.
+
+Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies.
+
+Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges.
+
+Demographic info about customers – gender, age range, and if they have partners and dependents.
 
 ## Project Overview
 
@@ -31,35 +34,35 @@ This project demonstrates an end-to-end ML pipeline:
 - Containerization (Docker + Docker Compose)
 - Unit testing (pytest)
 
----
+
 
 ## Project Structure
 
+```
 telco-customer-churn/
-│
-├── app/
-│ ├── main.py # FastAPI entrypoint
-│ ├── model_loader.py # Load trained model pipeline
-│ ├── schemas/
-│ │     └── prediction.py 
-│
-├── models/
-│ └── log_reg_model.pkl # Trained pipeline (scaler + encoder + model)
-│
-├── notebook/
-│ └── Telco_Customer_Churn.ipynb # Model training script
-│
-├── tests/
-│ ├── verify_model.py # verify saved model
-│ └── test_api.py # API unit tests
-│
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── README.md
+|
+|-- app/
+| |-- main.py # FastAPI entrypoint
+| |-- model_loader.py # Load trained model pipeline
+| |__ schemas/
+|      |__ prediction.py 
+|
+|-- models/
+| |__ log_reg_model.pkl # Trained pipeline (scaler + encoder + model)
+|
+|-- notebook/
+| |__ Telco_Customer_Churn.ipynb # Model training script
+|
+|-- tests/
+| |-- verify_model.py # verify saved model
+| |__ test_api.py # API unit tests
+|
+|-- docker-compose.yml
+|-- Dockerfile
+|-- requirements.txt
+|__ README.md
+```
 
-
----
 
 ## Machine Learning Pipeline
 
@@ -74,43 +77,49 @@ All steps are wrapped into a single sklearn/imblearn pipeline and saved as:
 bash:
 models/log_reg_model.pkl
 
---
+
 
 ## Tech Stack
-Python 3.11
-FastAPI
-Scikit-learn
-Pandas
-NumPy
-Imbalanced-learn
-Joblib
-Pydantic
-Uvicorn
-Docker
+- Python 3.11
+- FastAPI
+- cikit-learn
+- Pandas
+- NumPy
+- Imbalanced-learn
+- Joblib
+- Pydantic
+- Uvicorn
+- Docker
 
---
+
 
 ## Installation (Local Setup)
-    1. Clone repository
-        git clone https://github.com/your-username/telco-customer-churn.git
-        cd telco-customer-churn
+```
 
-    2. Create virtual environment
-        python -m venv venv
-        source venv/bin/activate   # Mac/Linux
-        venv\Scripts\activate      # Windows
+1. Clone repository:
+    git clone https://github.com/your-username/telco-customer-churn.git
+    cd telco-customer-churn
 
-    3. Install dependencies
-        pip install -r requirements.txt
-        Run the API
-        Start FastAPI server
-        uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-        Open API Docs
+2. Create virtual environment:
+
+    python -m venv venv
+    source venv/bin/activate   # Mac/Linux
+    venv\Scripts\activate      # Windows
+
+3. Install dependencies
+    pip install -r requirements.txt
+    Run the API
+    Start FastAPI server
+    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    Open API Docs
+    
     Swagger UI: http://127.0.0.1:8000/docs
+```
     
 ##  API Endpoints
     
-- Health Check
+- Health Check: 
+
     GET /
 
     Response:
@@ -120,8 +129,10 @@ Docker
     }
     
     
-- Prediction Endpoint
+- Prediction Endpoint:
+
     POST /predict
+    ```
     Example Request
     {
     "gender": "Male",
@@ -144,23 +155,26 @@ Docker
     "MonthlyCharges": 70.5,
     "TotalCharges": 840.6
     }
-
-    Example Response
+    ```
+    Example Response:
+    ```
     {
     "churn_prediction": "Yes",
     "churn_probability": 0.59
     }
-
+    ```
 
     - Invalid input returns:
 
     422 Unprocessable Entity
 
 ## Run with Docker
+```
     Build and start containers
     docker compose up --build -d
     Stop containers
     docker compose down
+```
 
 ## Run Tests
 pytest tests/
@@ -187,20 +201,24 @@ Ensure Docker Desktop is running:
 Docker Desktop (Container platform)
 
 ## Key Learnings
-End-to-end ML deployment workflow
-Data preprocessing pipelines
-Model serialization pitfalls
-API design with FastAPI
-Input/output validation with Pydantic
-Docker containerization
-Debugging dependency mismatches
+```
+- End-to-end ML deployment workflow
+- Data preprocessing pipelines
+- Model serialization pitfalls
+- API design with FastAPI
+- Input/output validation with Pydantic
+- Docker containerization
+- Debugging dependency mismatches
+```
 
 ## Future Improvements
-Add MLflow model tracking
-Add monitoring (drift detection)
-Replace Logistic Regression with XGBoost
-Deploy on AWS / GCP
-CI/CD pipeline (GitHub Actions)
+```
+- Add MLflow model tracking
+- Add monitoring (drift detection)
+- Replace Logistic Regression with XGBoost
+- Deploy on AWS / GCP
+- CI/CD pipeline (GitHub Actions)
+```
 
 ### Author 
 
