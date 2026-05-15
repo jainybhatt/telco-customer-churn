@@ -49,20 +49,6 @@ def predict(data: ChurnInput):
         data.TotalCharges
     ]])
 
-    # prediction = int(model.predict(features)[0])
-
-    # probabilities = model.predict_proba(features)[0]
-
-    # return ChurnOutput(
-    #     prediction=prediction,
-    #     prediction_label=LABEL_MAP[prediction],
-    #     probability=round(float(max(probabilities)), 4),
-    #     probabilities={
-    #         LABEL_MAP[i]: round(float(p), 4)
-    #         for i, p in enumerate(probabilities)
-    #     }
-    # )
-
 
     # Convert request to dataframe
     features_df = pd.DataFrame(
