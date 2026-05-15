@@ -1,7 +1,13 @@
 import requests
+from app.config import settings
+from fastapi.security import APIKeyHeader
+
+# Auth setup
+API_KEY = settings.api_key
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 BASE_URL = "http://localhost:8000"
-API_KEY = "test-key-123"
+
 HEADERS = {"Content-Type": "application/json", "X-API-KEY": API_KEY}
 
 # ------- Health --------
